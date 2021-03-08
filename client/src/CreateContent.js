@@ -10,8 +10,6 @@ function CreateContent(props) {
 		path = `/${props.postId}/comments`;
 	}
 
-	console.log(props.url + path);
-
 	const handleSubmit = async function (event) {
 		event.preventDefault();
 
