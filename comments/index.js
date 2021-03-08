@@ -16,11 +16,11 @@ app.get('/posts/:id/comments', (req, res) => {
 
 app.post('/posts/:id/comments', async (req, res) => {
 	const id = randomBytes(4).toString('hex');
-	const { content, status } = req.body;
-
+	const { content } = req.body;
 	const comments = commentsByPostId[req.params.id] || [];
+	const status = 'pending';
 
-	comments.push({ id, content, status: 'pending' });
+	comments.push({ id, content, status });
 
 	commentsByPostId[req.params.id] = comments;
 
